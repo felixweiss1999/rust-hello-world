@@ -14,4 +14,5 @@ fn main() {
     println!("{}", months[1]);
     let a = [1;200009];
     println!("{}", a[3000000]);
+    let a: u32 = {};
 }
