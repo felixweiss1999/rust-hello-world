@@ -15,13 +15,17 @@ fn main() {
     println!("{}", months[1]);
     let x: i32 = function(&"hi".to_string());
     if x == 2 {
-        println!("hihi");
-    } if x != 3 {
+        
+    } else if x != 3 {
         println!("asdf");
     }
 }
 
 fn function(x:&String) -> i32{
     println!("Successfully passed a string: {x}!");
-    2
+    if true {2} else {4};
+    loop{
+        if elem == 2 {break 7;}
+        break 3;
+    }
 }
