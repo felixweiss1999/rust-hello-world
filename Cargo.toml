@@ -10,4 +10,4 @@ rand = "0.8.5"
 
 [[bin]]
 name = "rust-hello-world"
-path = "src/chapter03.rs"
+path = "src/chapter04.rs"
