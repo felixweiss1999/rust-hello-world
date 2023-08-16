@@ -1,10 +1,6 @@
 fn main() {
-    let mut s = String::from("hello");
-    s.push_str("string");
-    change(&s);
-    let r1 = &s;
-}
+    let s = String::from("hello world");
 
-fn change(some_string: &String) -> usize {
-    some_string.len()
+    let hello = &s[0..5];
+    let world = &s[6..11];
 }
