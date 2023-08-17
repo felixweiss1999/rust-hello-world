@@ -37,4 +37,5 @@ fn main(){
     car2.hello();
     Car::hello(&car2);
     Car::hihi();
+    
 }
