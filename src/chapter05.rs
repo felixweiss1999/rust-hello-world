@@ -1,3 +1,4 @@
+#[derive(Debug)]
 struct Car {
     capacity: i32,
     brand: String,
@@ -14,5 +15,6 @@ fn main(){
     
     let car1: Car = Car {capacity: 4, brand: String::from("Audi"), production_date: String::from("2023-08-17"), electric: false};
     let car2: Car = Car {capacity: 3, ..car1};
-    println!("{car1}");
+    println!("{:#?}", car2);
+    dbg!(&car2);
 }
