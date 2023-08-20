@@ -13,10 +13,8 @@ enum Message {
 }
 impl Message {
     fn call(&self) {
-        println!("{}", match self {
-            Message::Write => "I'm a message lol",
-            _ => "I'm not a message!",
-        });
+        if let Message::Write(_) = *self {println!("I'm a message!")}
+        else {println!("I'm not a message!")}
     }
 }
 
@@ -28,5 +26,7 @@ fn main() {
     dbg!(ipversion);
     dbg!(ipversion6);
     let m = Message::Write(String::from("hello"));
+    m.call();
+    let m = Message::Quit;
     m.call();
 }
