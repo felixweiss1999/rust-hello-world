@@ -4,12 +4,22 @@ enum IpAddrKind {
     V6(String),
 }
 
+#[derive(PartialEq)]
 enum Message {
     Quit,
     Move { x: i32, y: i32 },
     Write(String),
     ChangeColor(i32, i32, i32),
 }
+impl Message {
+    fn call(&self) {
+        println!("{}", match self {
+            Message::Write => "I'm a message lol",
+            _ => "I'm not a message!",
+        });
+    }
+}
+
 
 
 fn main() {
@@ -17,4 +27,6 @@ fn main() {
     let ipversion6 = IpAddrKind::V6(String::from(""));
     dbg!(ipversion);
     dbg!(ipversion6);
+    let m = Message::Write(String::from("hello"));
+    m.call();
 }
