@@ -46,5 +46,42 @@ fn main() {
         println!("{b}");
     }
     
+    // hash maps:
+    use std::collections::HashMap;
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    let team_name = String::from("Blue");
+    let score = scores.get(&team_name).copied().unwrap_or(0);
+    // here, copied() gets a copy of the reference (essentially gets rid of reference), and unwrap_or() is a useful function to handle Option<> data types (if Null, null it lol)
+
+    //iterating over hash maps (essentially dictionaries!)
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    for (key, value) in &scores {
+        println!("{key}: {value}");
+    }
+    //default insert behavior is overwrite, since only one entry allowed per key. with following trick, you can check whether entry exists before changing
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+
+    scores.entry(String::from("Yellow")).or_insert(50);
+    scores.entry(String::from("Blue")).or_insert(50);
+
+    println!("{:?}", scores);
+
 
 }
