@@ -55,3 +55,7 @@ fn read_username_from_file() -> Result<String, io::Error> {
 
     Ok(username)
 }
+// the ? operator can also be used on options (either None or Value), with analogous behavior
+fn last_char_of_first_line(text: &str) -> Option<char> {
+    text.lines().next()?.chars().last()
+}
